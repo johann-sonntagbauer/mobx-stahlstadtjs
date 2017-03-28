@@ -1,0 +1,7 @@
+// setup stores
+const gustl = new SimplePerson();
+
+render(<Provider person={gustl}>
+    <Demo/>
+<Provider>, document.getElementById("root"));
+

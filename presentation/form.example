@@ -1,0 +1,9 @@
+import React from 'react';
+import {observer} from 'mobx-react';
+
+export default observer(function Form({person}) {
+  return <div>
+      <input type="text" value={person.firstName} onChange={(e) => person.firstName = e.target.value}/>
+      <input type="text" value={person.lastName} onChange={(e) => person.lastName = e.target.value}/>
+    </div>
+});

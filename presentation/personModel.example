@@ -1,0 +1,16 @@
+class SimplePerson {
+    constructor(firstName, lastName, address) {
+        mobx.extendObservable(this, {
+        firstName,
+        lastName,
+        address,
+        name: mobx.computed(() => `${this.firstName} ${this.lastName}` ),
+        update: mobx.action('update Simple Person', 
+            (firstName = this.firstName, lastName = this.lastName, address = this.address) => {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.address = address;
+                })
+        });
+    }
+}

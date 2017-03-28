@@ -1,0 +1,33 @@
+class FromPromiseDemoComponent extends React.Component {
+  constructor() {
+    super();
+    mobx.extendObservable(this, {
+      generateDeferred() {
+        this.deferred = mobxUtils.fromPromise(
+          new Promise((done, reject) => {
+            setTimeout(
+              () => {
+                if (Math.random() > 0.6) {
+                  reject("connection problem");
+                } else {
+                  done("ok");
+                }
+                setTimeout(() => this.generateDeferred(), 2000);
+              },
+              5000
+            );
+          })
+        );
+      },
+      deferred: null
+    });
+    this.generateDeferred();
+  }
+  render() {
+    return this.deferred.case({
+      pending: () => <div>loading...</div>,
+      rejected: cause => <div>error {cause}</div>,
+      fulfilled: ok => <div>DONE with {ok}</div>
+    });
+  }
+}
