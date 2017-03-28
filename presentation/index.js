@@ -241,7 +241,7 @@ export default class Presentation extends React.Component {
           <Appear>
             <Text>
               <strong>ATTENTION: </strong>
-              Do not over overemphasis. Local state is fine as long as it stays local
+              Do not over overemphasize. Local state is fine as long as it stays local
             </Text>
           </Appear>
 
@@ -294,7 +294,7 @@ export default class Presentation extends React.Component {
               Cons
             </Heading>
             <Appear>
-              <ListItem>Architecture</ListItem>
+              <ListItem>Architecture - leaves room for interpretation</ListItem>
             </Appear>
             <Appear>
               <ListItem>Observable Wrapper Objects</ListItem>
@@ -362,6 +362,11 @@ export default class Presentation extends React.Component {
             <Appear>
               <ListItem>
                 snapshots are <strong>immutable representation</strong> of the state of the model
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                reuse of redux devtools and easy integration
               </ListItem>
             </Appear>
           </List>
