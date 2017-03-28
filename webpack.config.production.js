@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist/"
+    publicPath: "https://johann-sonntagbauer.github.io/mobx-stahlstadtjs/dist/"
   },
   plugins: [
     new webpack.DefinePlugin({
